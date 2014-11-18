@@ -1,0 +1,18 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <!--
+    This jelly script is used for per-project configuration.
+
+    See global.jelly for a general discussion about jelly script.
+  -->
+  <f:entry title="Result to set" field="result" help="/plugin/force-status-plugin/help-result.html">
+    <f:combobox name="result" field="result" />
+  </f:entry>
+
+  <f:optionalBlock title="Enable condition" name="useCondition" inline="true" checked="${instance.useCondition}">
+      <f:block>
+          <f:entry title="Condition" field="condition" help="/plugin/force-status-plugin/help-condition.html">
+              <f:textbox name="condition" default="" />
+          </f:entry>
+      </f:block>
+  </f:optionalBlock>
+</j:jelly>
